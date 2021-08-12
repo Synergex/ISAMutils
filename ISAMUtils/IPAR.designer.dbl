@@ -1,0 +1,85 @@
+namespace ISAMUtils 
+    
+    
+    public partial class IPAR extends System.Windows.Forms.UserControl
+        
+        private btnISUTLIparBrowseIsam, @System.Windows.Forms.Button
+        
+        private cboxISUTLIparX, @System.Windows.Forms.CheckBox
+        
+        private cboxISUTLIparG, @System.Windows.Forms.CheckBox
+        
+        private tboxISUTLIparBrowseISAM, @System.Windows.Forms.TextBox
+        
+        private method InitializeComponent, void
+        endparams
+        proc
+            begin
+                data resources, @System.ComponentModel.ComponentResourceManager , new System.ComponentModel.ComponentResourceManager(^typeof(IPAR))
+                this.cboxISUTLIparG = new System.Windows.Forms.CheckBox()
+                this.cboxISUTLIparX = new System.Windows.Forms.CheckBox()
+                this.tboxISUTLIparBrowseISAM = new System.Windows.Forms.TextBox()
+                this.btnISUTLIparBrowseIsam = new System.Windows.Forms.Button()
+                this.SuspendLayout()
+                ;; 
+                ;; cboxISUTLIparG
+                ;; 
+                this.cboxISUTLIparG.AutoSize = True
+                this.cboxISUTLIparG.CheckAlign = System.Drawing.ContentAlignment.TopLeft
+                this.cboxISUTLIparG.Location = new System.Drawing.Point(9, 65)
+                this.cboxISUTLIparG.Name = (string)("cboxISUTLIparG")
+                this.cboxISUTLIparG.Size = new System.Drawing.Size(476, 43)
+                this.cboxISUTLIparG.TabIndex = 6
+                this.cboxISUTLIparG.Tag = (string)(" -g ")
+                this.cboxISUTLIparG.Text = resources.GetString((string)("cboxISUTLIparG.Text"))
+                this.cboxISUTLIparG.UseVisualStyleBackColor = True
+                ;; 
+                ;; cboxISUTLIparX
+                ;; 
+                this.cboxISUTLIparX.AutoSize = True
+                this.cboxISUTLIparX.Location = new System.Drawing.Point(9, 42)
+                this.cboxISUTLIparX.Name = (string)("cboxISUTLIparX")
+                this.cboxISUTLIparX.Size = new System.Drawing.Size(281, 17)
+                this.cboxISUTLIparX.TabIndex = 5
+                this.cboxISUTLIparX.Tag = (string)(" -x ")
+                this.cboxISUTLIparX.Text = (string)("Generate an XDL or FDL file to the Output window [-x]")
+                this.cboxISUTLIparX.UseVisualStyleBackColor = True
+                 addhandler( this.cboxISUTLIparX.CheckedChanged, cboxISUTLIparX_CheckedChanged)
+                ;; 
+                ;; tboxISUTLIparBrowseISAM
+                ;; 
+                this.tboxISUTLIparBrowseISAM.Location = new System.Drawing.Point(135, 11)
+                this.tboxISUTLIparBrowseISAM.Name = (string)("tboxISUTLIparBrowseISAM")
+                this.tboxISUTLIparBrowseISAM.Size = new System.Drawing.Size(250, 20)
+                this.tboxISUTLIparBrowseISAM.TabIndex = 0
+                ;; 
+                ;; btnISUTLIparBrowseIsam
+                ;; 
+                this.btnISUTLIparBrowseIsam.Location = new System.Drawing.Point(9, 9)
+                this.btnISUTLIparBrowseIsam.Name = (string)("btnISUTLIparBrowseIsam")
+                this.btnISUTLIparBrowseIsam.Size = new System.Drawing.Size(120, 23)
+                this.btnISUTLIparBrowseIsam.TabIndex = 3
+                this.btnISUTLIparBrowseIsam.Text = (string)("Browse for ISAM file")
+                this.btnISUTLIparBrowseIsam.UseVisualStyleBackColor = True
+                 addhandler( this.btnISUTLIparBrowseIsam.Click, btnISUTLIparBrowseIsam_Click)
+                ;; 
+                ;; IPAR
+                ;; 
+                this.AutoScaleDimensions = new System.Drawing.SizeF(6.0, 13.0)
+                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+                this.Controls.Add(this.btnISUTLIparBrowseIsam)
+                this.Controls.Add(this.cboxISUTLIparX)
+                this.Controls.Add(this.cboxISUTLIparG)
+                this.Controls.Add(this.tboxISUTLIparBrowseISAM)
+                this.Name = (string)("IPAR")
+                this.Padding = new System.Windows.Forms.Padding(6)
+                this.Size = new System.Drawing.Size(590, 400)
+                this.ResumeLayout(False)
+                this.PerformLayout()
+            end
+        
+        endmethod
+    
+    endclass
+
+endnamespace

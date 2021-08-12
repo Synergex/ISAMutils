@@ -1,0 +1,147 @@
+namespace ISAMUtils 
+    
+    
+    public partial class isutlPatch extends System.Windows.Forms.UserControl
+        
+        private rbtnIsutlPatchQfileNoEnc, @System.Windows.Forms.RadioButton
+        
+        private cboxIsutlPatchQfile, @System.Windows.Forms.CheckBox
+        
+        private rbtnIsutlPatchQfileEnc, @System.Windows.Forms.RadioButton
+        
+        private btnISUTLPatchBrowseISAM, @System.Windows.Forms.Button
+        
+        private comboxISUTLPatchRevisionLevel, @System.Windows.Forms.ComboBox
+        
+        private panIsutlPatchQfile, @System.Windows.Forms.Panel
+        
+        private labISUTLPatchRevisionLevel, @System.Windows.Forms.Label
+        
+        private tboxISUTLPatchBrowseISAM, @System.Windows.Forms.TextBox
+        
+        private method InitializeComponent, void
+        endparams
+        proc
+            begin
+                this.btnISUTLPatchBrowseISAM = new System.Windows.Forms.Button()
+                this.tboxISUTLPatchBrowseISAM = new System.Windows.Forms.TextBox()
+                this.comboxISUTLPatchRevisionLevel = new System.Windows.Forms.ComboBox()
+                this.labISUTLPatchRevisionLevel = new System.Windows.Forms.Label()
+                this.cboxIsutlPatchQfile = new System.Windows.Forms.CheckBox()
+                this.panIsutlPatchQfile = new System.Windows.Forms.Panel()
+                this.rbtnIsutlPatchQfileNoEnc = new System.Windows.Forms.RadioButton()
+                this.rbtnIsutlPatchQfileEnc = new System.Windows.Forms.RadioButton()
+                this.panIsutlPatchQfile.SuspendLayout()
+                this.SuspendLayout()
+                ;; 
+                ;; btnISUTLPatchBrowseISAM
+                ;; 
+                this.btnISUTLPatchBrowseISAM.Location = new System.Drawing.Point(6, 6)
+                this.btnISUTLPatchBrowseISAM.Name = (string)("btnISUTLPatchBrowseISAM")
+                this.btnISUTLPatchBrowseISAM.Size = new System.Drawing.Size(120, 23)
+                this.btnISUTLPatchBrowseISAM.TabIndex = 0
+                this.btnISUTLPatchBrowseISAM.Text = (string)("Browse for ISAM file")
+                this.btnISUTLPatchBrowseISAM.UseVisualStyleBackColor = True
+                 addhandler( this.btnISUTLPatchBrowseISAM.Click, btnISUTLPatchBrowseISAM_Click)
+                ;; 
+                ;; tboxISUTLPatchBrowseISAM
+                ;; 
+                this.tboxISUTLPatchBrowseISAM.Location = new System.Drawing.Point(132, 8)
+                this.tboxISUTLPatchBrowseISAM.Name = (string)("tboxISUTLPatchBrowseISAM")
+                this.tboxISUTLPatchBrowseISAM.Size = new System.Drawing.Size(250, 20)
+                this.tboxISUTLPatchBrowseISAM.TabIndex = 0
+                ;; 
+                ;; comboxISUTLPatchRevisionLevel
+                ;; 
+                this.comboxISUTLPatchRevisionLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+                this.comboxISUTLPatchRevisionLevel.FormattingEnabled = True
+                this.comboxISUTLPatchRevisionLevel.Items.AddRange( new System.Object[#] {
+                        &(string)(""),
+                            & (string)("2"),
+                            & (string)("3"),
+                            & (string)("5")})
+                this.comboxISUTLPatchRevisionLevel.Location = new System.Drawing.Point(6, 35)
+                this.comboxISUTLPatchRevisionLevel.Name = (string)("comboxISUTLPatchRevisionLevel")
+                this.comboxISUTLPatchRevisionLevel.Size = new System.Drawing.Size(41, 21)
+                this.comboxISUTLPatchRevisionLevel.TabIndex = 0
+                 addhandler( this.comboxISUTLPatchRevisionLevel.SelectedIndexChanged, comboxISUTLPatchRevisionLevel_SelectedIndexChanged)
+                ;; 
+                ;; labISUTLPatchRevisionLevel
+                ;; 
+                this.labISUTLPatchRevisionLevel.AutoSize = True
+                this.labISUTLPatchRevisionLevel.Location = new System.Drawing.Point(53, 39)
+                this.labISUTLPatchRevisionLevel.Name = (string)("labISUTLPatchRevisionLevel")
+                this.labISUTLPatchRevisionLevel.Size = new System.Drawing.Size(261, 13)
+                this.labISUTLPatchRevisionLevel.TabIndex = 2
+                this.labISUTLPatchRevisionLevel.Text = (string)("Select revision level to patch selected ISAM file to [-p]")
+                ;; 
+                ;; cboxIsutlPatchQfile
+                ;; 
+                this.cboxIsutlPatchQfile.AutoSize = True
+                this.cboxIsutlPatchQfile.Location = new System.Drawing.Point(6, 62)
+                this.cboxIsutlPatchQfile.Name = (string)("cboxIsutlPatchQfile")
+                this.cboxIsutlPatchQfile.Size = new System.Drawing.Size(342, 17)
+                this.cboxIsutlPatchQfile.TabIndex = 3
+                this.cboxIsutlPatchQfile.Tag = (string)("-qfile=")
+                this.cboxIsutlPatchQfile.Text = (string)("Set or unset the network encryption flag on the specified file [qfile=]")
+                this.cboxIsutlPatchQfile.UseVisualStyleBackColor = True
+                 addhandler( this.cboxIsutlPatchQfile.CheckedChanged, cboxIsutlPatchQfile_CheckedChanged)
+                ;; 
+                ;; panIsutlPatchQfile
+                ;; 
+                this.panIsutlPatchQfile.Controls.Add(this.rbtnIsutlPatchQfileNoEnc)
+                this.panIsutlPatchQfile.Controls.Add(this.rbtnIsutlPatchQfileEnc)
+                this.panIsutlPatchQfile.Enabled = False
+                this.panIsutlPatchQfile.Location = new System.Drawing.Point(25, 85)
+                this.panIsutlPatchQfile.Name = (string)("panIsutlPatchQfile")
+                this.panIsutlPatchQfile.Size = new System.Drawing.Size(162, 48)
+                this.panIsutlPatchQfile.TabIndex = 4
+                 addhandler( this.panIsutlPatchQfile.Leave, panIsutlPatchQfile_Leave)
+                ;; 
+                ;; rbtnIsutlPatchQfileNoEnc
+                ;; 
+                this.rbtnIsutlPatchQfileNoEnc.AutoSize = True
+                this.rbtnIsutlPatchQfileNoEnc.Location = new System.Drawing.Point(3, 3)
+                this.rbtnIsutlPatchQfileNoEnc.Name = (string)("rbtnIsutlPatchQfileNoEnc")
+                this.rbtnIsutlPatchQfileNoEnc.Size = new System.Drawing.Size(121, 17)
+                this.rbtnIsutlPatchQfileNoEnc.TabIndex = 0
+                this.rbtnIsutlPatchQfileNoEnc.TabStop = True
+                this.rbtnIsutlPatchQfileNoEnc.Tag = (string)("nonetwork_encrypt")
+                this.rbtnIsutlPatchQfileNoEnc.Text = (string)("No network_encrypt")
+                this.rbtnIsutlPatchQfileNoEnc.UseVisualStyleBackColor = True
+                ;; 
+                ;; rbtnIsutlPatchQfileEnc
+                ;; 
+                this.rbtnIsutlPatchQfileEnc.AutoSize = True
+                this.rbtnIsutlPatchQfileEnc.Location = new System.Drawing.Point(3, 26)
+                this.rbtnIsutlPatchQfileEnc.Name = (string)("rbtnIsutlPatchQfileEnc")
+                this.rbtnIsutlPatchQfileEnc.Size = new System.Drawing.Size(106, 17)
+                this.rbtnIsutlPatchQfileEnc.TabIndex = 1
+                this.rbtnIsutlPatchQfileEnc.TabStop = True
+                this.rbtnIsutlPatchQfileEnc.Tag = (string)("network_encrypt")
+                this.rbtnIsutlPatchQfileEnc.Text = (string)("Network_encrypt")
+                this.rbtnIsutlPatchQfileEnc.UseVisualStyleBackColor = True
+                ;; 
+                ;; isutlPatch
+                ;; 
+                this.AutoScaleDimensions = new System.Drawing.SizeF(6.0, 13.0)
+                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+                this.Controls.Add(this.comboxISUTLPatchRevisionLevel)
+                this.Controls.Add(this.cboxIsutlPatchQfile)
+                this.Controls.Add(this.panIsutlPatchQfile)
+                this.Controls.Add(this.labISUTLPatchRevisionLevel)
+                this.Controls.Add(this.btnISUTLPatchBrowseISAM)
+                this.Controls.Add(this.tboxISUTLPatchBrowseISAM)
+                this.Name = (string)("isutlPatch")
+                this.Size = new System.Drawing.Size(463, 370)
+                this.panIsutlPatchQfile.ResumeLayout(False)
+                this.panIsutlPatchQfile.PerformLayout()
+                this.ResumeLayout(False)
+                this.PerformLayout()
+            end
+        
+        endmethod
+    
+    endclass
+
+endnamespace

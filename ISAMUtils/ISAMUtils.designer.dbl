@@ -1,0 +1,519 @@
+namespace ISAMUtils 
+    
+    
+    public partial class ISAMUtilsClass extends System.Windows.Forms.Form
+        
+        private cboxSendToLog, @System.Windows.Forms.CheckBox
+        
+        private fCONVERTToolStripMenuItem, @System.Windows.Forms.ToolStripMenuItem
+        
+        private btnClearSettings, @System.Windows.Forms.Button
+        
+        private tabCtrlIsutl, @System.Windows.Forms.TabControl
+        
+        private ipar1, @ISAMUtils.IPAR
+        
+        private tabFconvert, @System.Windows.Forms.TabPage
+        
+        private btnExit, @System.Windows.Forms.Button
+        
+        private labSendToLog, @System.Windows.Forms.Label
+        
+        private iPARToolStripMenuItem, @System.Windows.Forms.ToolStripMenuItem
+        
+        private fconvertSwitches1, @ISAMUtils.FconvertSwitches
+        
+        private tabIpar, @System.Windows.Forms.TabPage
+        
+        private tabFastLoad, @System.Windows.Forms.TabPage
+        
+        private iSUTLToolStripMenuItem, @System.Windows.Forms.ToolStripMenuItem
+        
+        private tabPatch, @System.Windows.Forms.TabPage
+        
+        private tabIsutl, @System.Windows.Forms.TabPage
+        
+        private tabFconvertSwitches, @System.Windows.Forms.TabPage
+        
+        private fconvertInput1, @ISAMUtils.FconvertInput
+        
+        private fconvertOutput1, @ISAMUtils.FconvertOutput
+        
+        private tabVerify, @System.Windows.Forms.TabPage
+        
+        private tabReload, @System.Windows.Forms.TabPage
+        
+        private tabFconvertInput, @System.Windows.Forms.TabPage
+        
+        private tboxOutput, @System.Windows.Forms.TextBox
+        
+        private exitToolStripMenuItem, @System.Windows.Forms.ToolStripMenuItem
+        
+        private tabFconvertOutput, @System.Windows.Forms.TabPage
+        
+        private aboutToolStripMenuItem, @System.Windows.Forms.ToolStripMenuItem
+        
+        private utilitiesToolStripMenuItem, @System.Windows.Forms.ToolStripMenuItem
+        
+        private tabCtrlMain, @System.Windows.Forms.TabControl
+        
+        private isutlFastload2, @ISAMUtils.ISUTLFastload
+        
+        private isutlPatch1, @ISAMUtils.isutlPatch
+        
+        private GeneralToolStripMenuItem, @System.Windows.Forms.ToolStripMenuItem
+        
+        private tabctrlFconvert, @System.Windows.Forms.TabControl
+        
+        private mnuIsutls, @System.Windows.Forms.MenuStrip
+        
+        private isutlVerify1, @ISAMUtils.isutlVerify
+        
+        private isutlReload1, @ISAMUtils.isutlReload
+        
+        private btnRun, @System.Windows.Forms.Button
+        
+        private method InitializeComponent, void
+        endparams
+        proc
+            begin
+                this.mnuIsutls = new System.Windows.Forms.MenuStrip()
+                this.GeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem()
+                this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem()
+                this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem()
+                this.utilitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem()
+                this.iSUTLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem()
+                this.iPARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem()
+                this.fCONVERTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem()
+                this.tboxOutput = new System.Windows.Forms.TextBox()
+                this.cboxSendToLog = new System.Windows.Forms.CheckBox()
+                this.labSendToLog = new System.Windows.Forms.Label()
+                this.btnClearSettings = new System.Windows.Forms.Button()
+                this.btnRun = new System.Windows.Forms.Button()
+                this.btnExit = new System.Windows.Forms.Button()
+                this.tabFconvert = new System.Windows.Forms.TabPage()
+                this.tabctrlFconvert = new System.Windows.Forms.TabControl()
+                this.tabFconvertInput = new System.Windows.Forms.TabPage()
+                this.fconvertInput1 = new ISAMUtils.FconvertInput()
+                this.tabFconvertOutput = new System.Windows.Forms.TabPage()
+                this.fconvertOutput1 = new ISAMUtils.FconvertOutput()
+                this.tabFconvertSwitches = new System.Windows.Forms.TabPage()
+                this.fconvertSwitches1 = new ISAMUtils.FconvertSwitches()
+                this.tabIpar = new System.Windows.Forms.TabPage()
+                this.ipar1 = new ISAMUtils.IPAR()
+                this.tabIsutl = new System.Windows.Forms.TabPage()
+                this.tabCtrlIsutl = new System.Windows.Forms.TabControl()
+                this.tabReload = new System.Windows.Forms.TabPage()
+                this.isutlReload1 = new ISAMUtils.isutlReload()
+                this.tabVerify = new System.Windows.Forms.TabPage()
+                this.isutlVerify1 = new ISAMUtils.isutlVerify()
+                this.tabFastLoad = new System.Windows.Forms.TabPage()
+                this.isutlFastload2 = new ISAMUtils.ISUTLFastload()
+                this.tabPatch = new System.Windows.Forms.TabPage()
+                this.isutlPatch1 = new ISAMUtils.isutlPatch()
+                this.tabCtrlMain = new System.Windows.Forms.TabControl()
+                this.mnuIsutls.SuspendLayout()
+                this.tabFconvert.SuspendLayout()
+                this.tabctrlFconvert.SuspendLayout()
+                this.tabFconvertInput.SuspendLayout()
+                this.tabFconvertOutput.SuspendLayout()
+                this.tabFconvertSwitches.SuspendLayout()
+                this.tabIpar.SuspendLayout()
+                this.tabIsutl.SuspendLayout()
+                this.tabCtrlIsutl.SuspendLayout()
+                this.tabReload.SuspendLayout()
+                this.tabVerify.SuspendLayout()
+                this.tabFastLoad.SuspendLayout()
+                this.tabPatch.SuspendLayout()
+                this.tabCtrlMain.SuspendLayout()
+                this.SuspendLayout()
+                ;; 
+                ;; mnuIsutls
+                ;; 
+                this.mnuIsutls.Items.AddRange( new System.Windows.Forms.ToolStripItem[#] {
+                        &this.GeneralToolStripMenuItem,
+                            & this.utilitiesToolStripMenuItem})
+                this.mnuIsutls.Location = new System.Drawing.Point(0, 0)
+                this.mnuIsutls.Name = (string)("mnuIsutls")
+                this.mnuIsutls.Size = new System.Drawing.Size(622, 24)
+                this.mnuIsutls.TabIndex = 1
+                ;; 
+                ;; GeneralToolStripMenuItem
+                ;; 
+                this.GeneralToolStripMenuItem.DropDownItems.AddRange( new System.Windows.Forms.ToolStripItem[#] {
+                        &this.aboutToolStripMenuItem,
+                            & this.exitToolStripMenuItem})
+                this.GeneralToolStripMenuItem.Name = (string)("GeneralToolStripMenuItem")
+                this.GeneralToolStripMenuItem.Size = new System.Drawing.Size(59, 20)
+                this.GeneralToolStripMenuItem.Text = (string)("General")
+                ;; 
+                ;; aboutToolStripMenuItem
+                ;; 
+                this.aboutToolStripMenuItem.Name = (string)("aboutToolStripMenuItem")
+                this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22)
+                this.aboutToolStripMenuItem.Text = (string)("About")
+                 addhandler( this.aboutToolStripMenuItem.Click, aboutToolStripMenuItem_Click)
+                ;; 
+                ;; exitToolStripMenuItem
+                ;; 
+                this.exitToolStripMenuItem.Name = (string)("exitToolStripMenuItem")
+                this.exitToolStripMenuItem.Size = new System.Drawing.Size(107, 22)
+                this.exitToolStripMenuItem.Text = (string)("Exit")
+                 addhandler( this.exitToolStripMenuItem.Click, exitToolStripMenuItem_Click)
+                ;; 
+                ;; utilitiesToolStripMenuItem
+                ;; 
+                this.utilitiesToolStripMenuItem.DropDownItems.AddRange( new System.Windows.Forms.ToolStripItem[#] {
+                        &this.iSUTLToolStripMenuItem,
+                            & this.iPARToolStripMenuItem,
+                            & this.fCONVERTToolStripMenuItem})
+                this.utilitiesToolStripMenuItem.Name = (string)("utilitiesToolStripMenuItem")
+                this.utilitiesToolStripMenuItem.Size = new System.Drawing.Size(58, 20)
+                this.utilitiesToolStripMenuItem.Text = (string)("Utilities")
+                ;; 
+                ;; iSUTLToolStripMenuItem
+                ;; 
+                this.iSUTLToolStripMenuItem.Name = (string)("iSUTLToolStripMenuItem")
+                this.iSUTLToolStripMenuItem.Size = new System.Drawing.Size(133, 22)
+                this.iSUTLToolStripMenuItem.Text = (string)("ISUTL")
+                 addhandler( this.iSUTLToolStripMenuItem.Click, iSUTLToolStripMenuItem_Click)
+                ;; 
+                ;; iPARToolStripMenuItem
+                ;; 
+                this.iPARToolStripMenuItem.Name = (string)("iPARToolStripMenuItem")
+                this.iPARToolStripMenuItem.Size = new System.Drawing.Size(133, 22)
+                this.iPARToolStripMenuItem.Text = (string)("IPAR")
+                 addhandler( this.iPARToolStripMenuItem.Click, iPARToolStripMenuItem_Click)
+                ;; 
+                ;; fCONVERTToolStripMenuItem
+                ;; 
+                this.fCONVERTToolStripMenuItem.Name = (string)("fCONVERTToolStripMenuItem")
+                this.fCONVERTToolStripMenuItem.Size = new System.Drawing.Size(133, 22)
+                this.fCONVERTToolStripMenuItem.Text = (string)("FCONVERT")
+                 addhandler( this.fCONVERTToolStripMenuItem.Click, fCONVERTToolStripMenuItem_Click)
+                ;; 
+                ;; tboxOutput
+                ;; 
+                this.tboxOutput.Location = new System.Drawing.Point(12, 539)
+                this.tboxOutput.Multiline = True
+                this.tboxOutput.Name = (string)("tboxOutput")
+                this.tboxOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+                this.tboxOutput.Size = new System.Drawing.Size(600, 110)
+                this.tboxOutput.TabIndex = 0
+                ;; 
+                ;; cboxSendToLog
+                ;; 
+                this.cboxSendToLog.AutoSize = True
+                this.cboxSendToLog.Font = new System.Drawing.Font((string)("Microsoft Sans Serif"), 8.25, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)))
+                this.cboxSendToLog.Location = new System.Drawing.Point(67, 510)
+                this.cboxSendToLog.Name = (string)("cboxSendToLog")
+                this.cboxSendToLog.Size = new System.Drawing.Size(112, 17)
+                this.cboxSendToLog.TabIndex = 3
+                this.cboxSendToLog.Text = (string)("Send to log file")
+                this.cboxSendToLog.UseVisualStyleBackColor = True
+                 addhandler( this.cboxSendToLog.CheckedChanged, cboxSendToLog_CheckedChanged)
+                ;; 
+                ;; labSendToLog
+                ;; 
+                this.labSendToLog.AutoSize = True
+                this.labSendToLog.Font = new System.Drawing.Font((string)("Microsoft Sans Serif"), 8.25, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)))
+                this.labSendToLog.Location = new System.Drawing.Point(9, 511)
+                this.labSendToLog.Name = (string)("labSendToLog")
+                this.labSendToLog.Size = new System.Drawing.Size(49, 13)
+                this.labSendToLog.TabIndex = 5
+                this.labSendToLog.Text = (string)("Output:")
+                ;; 
+                ;; btnClearSettings
+                ;; 
+                this.btnClearSettings.Location = new System.Drawing.Point(11, 664)
+                this.btnClearSettings.Name = (string)("btnClearSettings")
+                this.btnClearSettings.Size = new System.Drawing.Size(100, 23)
+                this.btnClearSettings.TabIndex = 11
+                this.btnClearSettings.Text = (string)("Clear Settings")
+                this.btnClearSettings.UseVisualStyleBackColor = True
+                 addhandler( this.btnClearSettings.Click, btnClearSettings_Click)
+                ;; 
+                ;; btnRun
+                ;; 
+                this.btnRun.Location = new System.Drawing.Point(454, 664)
+                this.btnRun.Name = (string)("btnRun")
+                this.btnRun.Size = new System.Drawing.Size(75, 23)
+                this.btnRun.TabIndex = 12
+                this.btnRun.Text = (string)("Run")
+                this.btnRun.UseVisualStyleBackColor = True
+                 addhandler( this.btnRun.Click, btnRun_Click)
+                ;; 
+                ;; btnExit
+                ;; 
+                this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel
+                this.btnExit.Location = new System.Drawing.Point(536, 664)
+                this.btnExit.Name = (string)("btnExit")
+                this.btnExit.Size = new System.Drawing.Size(75, 23)
+                this.btnExit.TabIndex = 13
+                this.btnExit.Text = (string)("Exit")
+                this.btnExit.UseVisualStyleBackColor = True
+                 addhandler( this.btnExit.Click, btnExit_Click)
+                ;; 
+                ;; tabFconvert
+                ;; 
+                this.tabFconvert.Controls.Add(this.tabctrlFconvert)
+                this.tabFconvert.Location = new System.Drawing.Point(4, 22)
+                this.tabFconvert.Name = (string)("tabFconvert")
+                this.tabFconvert.Padding = new System.Windows.Forms.Padding(3)
+                this.tabFconvert.Size = new System.Drawing.Size(192, 74)
+                this.tabFconvert.TabIndex = 3
+                this.tabFconvert.Text = (string)("F-Convert")
+                this.tabFconvert.UseVisualStyleBackColor = True
+                ;; 
+                ;; tabctrlFconvert
+                ;; 
+                this.tabctrlFconvert.Controls.Add(this.tabFconvertInput)
+                this.tabctrlFconvert.Controls.Add(this.tabFconvertOutput)
+                this.tabctrlFconvert.Controls.Add(this.tabFconvertSwitches)
+                this.tabctrlFconvert.Dock = System.Windows.Forms.DockStyle.Fill
+                this.tabctrlFconvert.Location = new System.Drawing.Point(3, 3)
+                this.tabctrlFconvert.Name = (string)("tabctrlFconvert")
+                this.tabctrlFconvert.SelectedIndex = 0
+                this.tabctrlFconvert.Size = new System.Drawing.Size(608, 441)
+                this.tabctrlFconvert.TabIndex = 0
+                ;; 
+                ;; tabFconvertInput
+                ;; 
+                this.tabFconvertInput.Controls.Add(this.fconvertInput1)
+                this.tabFconvertInput.Location = new System.Drawing.Point(4, 22)
+                this.tabFconvertInput.Name = (string)("tabFconvertInput")
+                this.tabFconvertInput.Size = new System.Drawing.Size(600, 415)
+                this.tabFconvertInput.TabIndex = 1
+                this.tabFconvertInput.Text = (string)("Input")
+                this.tabFconvertInput.UseVisualStyleBackColor = True
+                ;; 
+                ;; fconvertInput1
+                ;; 
+                this.fconvertInput1.Dock = System.Windows.Forms.DockStyle.Fill
+                this.fconvertInput1.Location = new System.Drawing.Point(0, 0)
+                this.fconvertInput1.Name = (string)("fconvertInput1")
+                this.fconvertInput1.Padding = new System.Windows.Forms.Padding(6)
+                this.fconvertInput1.Size = new System.Drawing.Size(600, 415)
+                this.fconvertInput1.TabIndex = 0
+                ;; 
+                ;; tabFconvertOutput
+                ;; 
+                this.tabFconvertOutput.Controls.Add(this.fconvertOutput1)
+                this.tabFconvertOutput.Location = new System.Drawing.Point(4, 22)
+                this.tabFconvertOutput.Name = (string)("tabFconvertOutput")
+                this.tabFconvertOutput.Size = new System.Drawing.Size(600, 415)
+                this.tabFconvertOutput.TabIndex = 2
+                this.tabFconvertOutput.Text = (string)("Output")
+                this.tabFconvertOutput.UseVisualStyleBackColor = True
+                ;; 
+                ;; fconvertOutput1
+                ;; 
+                this.fconvertOutput1.Dock = System.Windows.Forms.DockStyle.Fill
+                this.fconvertOutput1.Location = new System.Drawing.Point(0, 0)
+                this.fconvertOutput1.Name = (string)("fconvertOutput1")
+                this.fconvertOutput1.Padding = new System.Windows.Forms.Padding(6)
+                this.fconvertOutput1.Size = new System.Drawing.Size(600, 415)
+                this.fconvertOutput1.TabIndex = 0
+                ;; 
+                ;; tabFconvertSwitches
+                ;; 
+                this.tabFconvertSwitches.Controls.Add(this.fconvertSwitches1)
+                this.tabFconvertSwitches.Location = new System.Drawing.Point(4, 22)
+                this.tabFconvertSwitches.Name = (string)("tabFconvertSwitches")
+                this.tabFconvertSwitches.Padding = new System.Windows.Forms.Padding(3)
+                this.tabFconvertSwitches.Size = new System.Drawing.Size(600, 415)
+                this.tabFconvertSwitches.TabIndex = 0
+                this.tabFconvertSwitches.Text = (string)("Switches")
+                this.tabFconvertSwitches.UseVisualStyleBackColor = True
+                ;; 
+                ;; fconvertSwitches1
+                ;; 
+                this.fconvertSwitches1.Dock = System.Windows.Forms.DockStyle.Fill
+                this.fconvertSwitches1.Location = new System.Drawing.Point(3, 3)
+                this.fconvertSwitches1.Name = (string)("fconvertSwitches1")
+                this.fconvertSwitches1.Padding = new System.Windows.Forms.Padding(6)
+                this.fconvertSwitches1.Size = new System.Drawing.Size(594, 409)
+                this.fconvertSwitches1.TabIndex = 0
+                ;; 
+                ;; tabIpar
+                ;; 
+                this.tabIpar.Controls.Add(this.ipar1)
+                this.tabIpar.Location = new System.Drawing.Point(4, 22)
+                this.tabIpar.Name = (string)("tabIpar")
+                this.tabIpar.Padding = new System.Windows.Forms.Padding(3)
+                this.tabIpar.Size = new System.Drawing.Size(614, 447)
+                this.tabIpar.TabIndex = 2
+                this.tabIpar.Text = (string)("IPAR")
+                this.tabIpar.UseVisualStyleBackColor = True
+                ;; 
+                ;; ipar1
+                ;; 
+                this.ipar1.Dock = System.Windows.Forms.DockStyle.Fill
+                this.ipar1.Location = new System.Drawing.Point(3, 3)
+                this.ipar1.Name = (string)("ipar1")
+                this.ipar1.Padding = new System.Windows.Forms.Padding(6)
+                this.ipar1.Size = new System.Drawing.Size(608, 441)
+                this.ipar1.TabIndex = 0
+                ;; 
+                ;; tabIsutl
+                ;; 
+                this.tabIsutl.Controls.Add(this.tabCtrlIsutl)
+                this.tabIsutl.Location = new System.Drawing.Point(4, 22)
+                this.tabIsutl.Name = (string)("tabIsutl")
+                this.tabIsutl.Padding = new System.Windows.Forms.Padding(3)
+                this.tabIsutl.Size = new System.Drawing.Size(614, 447)
+                this.tabIsutl.TabIndex = 1
+                this.tabIsutl.Text = (string)("ISUTL")
+                this.tabIsutl.UseVisualStyleBackColor = True
+                ;; 
+                ;; tabCtrlIsutl
+                ;; 
+                this.tabCtrlIsutl.Controls.Add(this.tabReload)
+                this.tabCtrlIsutl.Controls.Add(this.tabVerify)
+                this.tabCtrlIsutl.Controls.Add(this.tabFastLoad)
+                this.tabCtrlIsutl.Controls.Add(this.tabPatch)
+                this.tabCtrlIsutl.Dock = System.Windows.Forms.DockStyle.Fill
+                this.tabCtrlIsutl.Location = new System.Drawing.Point(3, 3)
+                this.tabCtrlIsutl.Name = (string)("tabCtrlIsutl")
+                this.tabCtrlIsutl.SelectedIndex = 0
+                this.tabCtrlIsutl.Size = new System.Drawing.Size(608, 441)
+                this.tabCtrlIsutl.TabIndex = 0
+                this.tabCtrlIsutl.Tag = (string)("")
+                ;; 
+                ;; tabReload
+                ;; 
+                this.tabReload.Controls.Add(this.isutlReload1)
+                this.tabReload.Location = new System.Drawing.Point(4, 22)
+                this.tabReload.Name = (string)("tabReload")
+                this.tabReload.Padding = new System.Windows.Forms.Padding(3)
+                this.tabReload.Size = new System.Drawing.Size(600, 415)
+                this.tabReload.TabIndex = 0
+                this.tabReload.Text = (string)("Reload")
+                this.tabReload.UseVisualStyleBackColor = True
+                ;; 
+                ;; isutlReload1
+                ;; 
+                this.isutlReload1.Dock = System.Windows.Forms.DockStyle.Fill
+                this.isutlReload1.Location = new System.Drawing.Point(3, 3)
+                this.isutlReload1.Name = (string)("isutlReload1")
+                this.isutlReload1.Padding = new System.Windows.Forms.Padding(3)
+                this.isutlReload1.Size = new System.Drawing.Size(594, 409)
+                this.isutlReload1.TabIndex = 0
+                ;; 
+                ;; tabVerify
+                ;; 
+                this.tabVerify.Controls.Add(this.isutlVerify1)
+                this.tabVerify.Location = new System.Drawing.Point(4, 22)
+                this.tabVerify.Name = (string)("tabVerify")
+                this.tabVerify.Padding = new System.Windows.Forms.Padding(3)
+                this.tabVerify.Size = new System.Drawing.Size(600, 415)
+                this.tabVerify.TabIndex = 1
+                this.tabVerify.Text = (string)("Verify")
+                this.tabVerify.UseVisualStyleBackColor = True
+                ;; 
+                ;; isutlVerify1
+                ;; 
+                this.isutlVerify1.Dock = System.Windows.Forms.DockStyle.Fill
+                this.isutlVerify1.Location = new System.Drawing.Point(3, 3)
+                this.isutlVerify1.Name = (string)("isutlVerify1")
+                this.isutlVerify1.Padding = new System.Windows.Forms.Padding(6)
+                this.isutlVerify1.Size = new System.Drawing.Size(594, 409)
+                this.isutlVerify1.TabIndex = 0
+                ;; 
+                ;; tabFastLoad
+                ;; 
+                this.tabFastLoad.Controls.Add(this.isutlFastload2)
+                this.tabFastLoad.Location = new System.Drawing.Point(4, 22)
+                this.tabFastLoad.Name = (string)("tabFastLoad")
+                this.tabFastLoad.Padding = new System.Windows.Forms.Padding(3)
+                this.tabFastLoad.Size = new System.Drawing.Size(600, 415)
+                this.tabFastLoad.TabIndex = 2
+                this.tabFastLoad.Text = (string)("Fast Load")
+                this.tabFastLoad.UseVisualStyleBackColor = True
+                ;; 
+                ;; isutlFastload2
+                ;; 
+                this.isutlFastload2.Dock = System.Windows.Forms.DockStyle.Fill
+                this.isutlFastload2.Location = new System.Drawing.Point(3, 3)
+                this.isutlFastload2.Name = (string)("isutlFastload2")
+                this.isutlFastload2.Padding = new System.Windows.Forms.Padding(6)
+                this.isutlFastload2.Size = new System.Drawing.Size(594, 409)
+                this.isutlFastload2.TabIndex = 0
+                ;; 
+                ;; tabPatch
+                ;; 
+                this.tabPatch.Controls.Add(this.isutlPatch1)
+                this.tabPatch.Location = new System.Drawing.Point(4, 22)
+                this.tabPatch.Name = (string)("tabPatch")
+                this.tabPatch.Padding = new System.Windows.Forms.Padding(3)
+                this.tabPatch.Size = new System.Drawing.Size(600, 415)
+                this.tabPatch.TabIndex = 3
+                this.tabPatch.Text = (string)("Patch")
+                this.tabPatch.UseVisualStyleBackColor = True
+                ;; 
+                ;; isutlPatch1
+                ;; 
+                this.isutlPatch1.Dock = System.Windows.Forms.DockStyle.Fill
+                this.isutlPatch1.Location = new System.Drawing.Point(3, 3)
+                this.isutlPatch1.Name = (string)("isutlPatch1")
+                this.isutlPatch1.Size = new System.Drawing.Size(594, 409)
+                this.isutlPatch1.TabIndex = 0
+                ;; 
+                ;; tabCtrlMain
+                ;; 
+                this.tabCtrlMain.Controls.Add(this.tabIsutl)
+                this.tabCtrlMain.Controls.Add(this.tabIpar)
+                this.tabCtrlMain.Controls.Add(this.tabFconvert)
+                this.tabCtrlMain.Dock = System.Windows.Forms.DockStyle.Top
+                this.tabCtrlMain.Location = new System.Drawing.Point(0, 24)
+                this.tabCtrlMain.Name = (string)("tabCtrlMain")
+                this.tabCtrlMain.SelectedIndex = 0
+                this.tabCtrlMain.Size = new System.Drawing.Size(622, 473)
+                this.tabCtrlMain.TabIndex = 0
+                ;; 
+                ;; ISAMUtilsClass
+                ;; 
+                this.AcceptButton = this.btnRun
+                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
+                this.CancelButton = this.btnExit
+                this.ClientSize = new System.Drawing.Size(622, 697)
+                this.Controls.Add(this.tboxOutput)
+                this.Controls.Add(this.btnExit)
+                this.Controls.Add(this.btnRun)
+                this.Controls.Add(this.btnClearSettings)
+                this.Controls.Add(this.labSendToLog)
+                this.Controls.Add(this.cboxSendToLog)
+                this.Controls.Add(this.tabCtrlMain)
+                this.Controls.Add(this.mnuIsutls)
+                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+                this.MainMenuStrip = this.mnuIsutls
+                this.MaximizeBox = False
+                this.Name = (string)("ISAMUtilsClass")
+                this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
+                this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+                this.Text = (string)("ISAMUtils")
+                 addhandler( this.Load, ISAMUtilsClass_Load)
+                this.mnuIsutls.ResumeLayout(False)
+                this.mnuIsutls.PerformLayout()
+                this.tabFconvert.ResumeLayout(False)
+                this.tabctrlFconvert.ResumeLayout(False)
+                this.tabFconvertInput.ResumeLayout(False)
+                this.tabFconvertOutput.ResumeLayout(False)
+                this.tabFconvertSwitches.ResumeLayout(False)
+                this.tabIpar.ResumeLayout(False)
+                this.tabIsutl.ResumeLayout(False)
+                this.tabCtrlIsutl.ResumeLayout(False)
+                this.tabReload.ResumeLayout(False)
+                this.tabVerify.ResumeLayout(False)
+                this.tabFastLoad.ResumeLayout(False)
+                this.tabPatch.ResumeLayout(False)
+                this.tabCtrlMain.ResumeLayout(False)
+                this.ResumeLayout(False)
+                this.PerformLayout()
+            end
+        
+        endmethod
+    
+    endclass
+
+endnamespace
