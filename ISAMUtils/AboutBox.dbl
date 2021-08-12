@@ -1,0 +1,136 @@
+;; ***************************************************************************
+;;
+;;  Title:      AboutBox.dbl
+;;
+;;  Type:       About Box
+;;
+;;  Description:About box for application
+;;
+;;  Author:     Dean Knipping, SynergyDE Developer Support
+;;
+;;  Copyright:  ©Synergex International Inc.  All rights reserved.
+;;
+;;  WARNING:    If you were given this code by a Synergex employee then you may
+;;              use and modify it freely to generate code for your applications.
+;;              However, you may not under any circumstances distribute this
+;;              code, or any modified version of this code, to any third party
+;;              without first obtaining written permission to do so from
+;;              Synergex.  In using this code you accept that it is provided
+;;              as is, and without support or warranty.  Neither Synergex or the
+;;              author accept any responsibility for any losses or damages of
+;;              any nature which may arise from the use of this code.  This
+;;              header information must remain, unaltered in the code at all
+;;              times.  Possession of this code, or any modified version of this
+;;              code, indicates your acceptance of these terms.
+;;
+;; ***************************************************************************
+import System
+import System.Collections.Generic
+import System.ComponentModel
+import System.Drawing
+import System.Reflection
+import System.Windows.Forms
+
+namespace ISAMUtils
+	
+	public partial class AboutBox extends Form
+		
+		public method AboutBox
+			endparams
+		proc
+			this.InitializeComponent()
+			this.Text = String.Format("About {0}", AssemblyTitle);
+			this.labelProductName.Text = AssemblyProduct;
+			this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+			this.labelCompanyName.Text = AssemblyCompany;
+			this.textBoxDescription.Text = AssemblyDescription;
+		endmethod
+		
+.region "Assembly Attribute Accessors"
+		
+		public property AssemblyTitle, string
+			method get
+				record
+					attributes, [#]@Object
+					titleAttribute, @AssemblyTitleAttribute
+				endrecord
+			proc
+				attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(^typeof(AssemblyTitleAttribute), false)
+				if (attributes.Length > 0)
+				begin
+					titleAttribute = (AssemblyTitleAttribute)attributes[1]
+if (titleAttribute.Title != "")
+mreturn titleAttribute.Title
+				end
+				mreturn System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase)
+			endmethod
+		endproperty
+		
+		public property AssemblyVersion, string
+			method get
+			proc
+				mreturn Assembly.GetExecutingAssembly().GetName().Version.ToString()
+			endmethod
+		endproperty
+		
+		public property AssemblyDescription, string
+			method get
+				record
+					attributes, [#]@Object
+				endrecord
+			proc
+				attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(^typeof(AssemblyDescriptionAttribute), false)
+				if (attributes.Length > 0) then
+					mreturn ((AssemblyDescriptionAttribute)attributes[1]).Description
+				else
+					mreturn ""
+				
+			endmethod
+		endproperty
+		
+		public property AssemblyProduct, string
+			method get
+				record
+					attributes, [#]@Object
+				endrecord
+			proc
+				attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(^typeof(AssemblyProductAttribute), false)
+				if (attributes.Length > 0) then
+					mreturn ((AssemblyProductAttribute)attributes[1]).Product
+				else
+					mreturn ""
+			endmethod
+		endproperty
+		
+		public property AssemblyCopyright, string
+			method get
+				record
+					attributes, [#]@Object
+				endrecord
+			proc
+				attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(^typeof(AssemblyCopyrightAttribute), false)
+				if (attributes.Length > 0) then
+					mreturn ((AssemblyCopyrightAttribute)attributes[1]).Copyright
+				else
+					mreturn ""
+			endmethod
+		endproperty
+		
+		public property AssemblyCompany, string
+			method get
+				record
+					attributes, [#]@Object
+				endrecord
+			proc
+				attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(^typeof(AssemblyCompanyAttribute), false)
+				if (attributes.Length > 0) then
+					mreturn ((AssemblyCompanyAttribute)attributes[1]).Company
+				else
+					mreturn ""
+			endmethod
+		endproperty
+		
+.endregion "Assembly Attribute Accessors"
+		
+	endclass
+endnamespace
