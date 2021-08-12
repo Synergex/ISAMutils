@@ -9,3 +9,4 @@
 <hr>
 
 **Additional Information:** Utils provides a convenient way to run these utilities with all their options available to the user in a familiar Windows interface application.
+The submission also has the project built into an executable (ISAMUtils.exe) so that the utility may be utilized without building the source.
