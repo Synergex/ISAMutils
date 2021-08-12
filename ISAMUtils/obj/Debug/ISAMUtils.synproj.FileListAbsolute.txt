@@ -1,0 +1,64 @@
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\bin\Debug\ISAMUtils.exe.config
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\bin\Debug\ISAMUtils.exe
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\bin\Debug\ISAMUtils.pdb
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\ISAMUtils.g.resources
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\ISAMUtils.AboutBox.resources
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\ISAMUtils.FconvertInput.resources
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\ISAMUtils.FconvertOutput.resources
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\ISAMUtils.FconvertSwitches.resources
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\ISAMUtils.IPAR.resources
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\ISAMUtils.ISAMUtils.resources
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\ISAMUtils.ISUTLFastload.resources
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\ISAMUtils.isutlPatch.resources
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\ISAMUtils.isutlReload.resources
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\ISAMUtils.isutlVerify.resources
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\ISAMUtils.Properties.Resources.resources
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\GenerateResource.read.46.tlog
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\GenerateResource.write.46.tlog
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\ISAMUtils.exe
+C:\Users\fawcettj\Documents\Visual Studio 2010\Projects\ISAMUtils(63)\ISAMUtils\obj\Debug\ISAMUtils.pdb
+G:\ISAMUtils\ISAMUtils\bin\Debug\ISAMUtils.exe.config
+G:\ISAMUtils\ISAMUtils\bin\Debug\ISAMUtils.exe
+G:\ISAMUtils\ISAMUtils\bin\Debug\ISAMUtils.pdb
+G:\ISAMUtils\ISAMUtils\obj\Debug\ResolveAssemblyReference.cache
+G:\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.g.resources
+G:\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.AboutBox.resources
+G:\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.FconvertInput.resources
+G:\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.FconvertOutput.resources
+G:\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.FconvertSwitches.resources
+G:\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.IPAR.resources
+G:\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.ISAMUtils.resources
+G:\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.ISUTLFastload.resources
+G:\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.isutlPatch.resources
+G:\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.isutlReload.resources
+G:\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.isutlVerify.resources
+G:\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.Properties.Resources.resources
+G:\ISAMUtils\ISAMUtils\obj\Debug\GenerateResource.read.1.tlog
+G:\ISAMUtils\ISAMUtils\obj\Debug\GenerateResource.read.46.tlog
+G:\ISAMUtils\ISAMUtils\obj\Debug\GenerateResource.write.1.tlog
+G:\ISAMUtils\ISAMUtils\obj\Debug\GenerateResource.write.46.tlog
+G:\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.exe
+G:\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.pdb
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\bin\Debug\ISAMUtils.exe.config
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\bin\Debug\ISAMUtils.exe
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\bin\Debug\ISAMUtils.pdb
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.g.resources
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.AboutBox.resources
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.FconvertInput.resources
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.FconvertOutput.resources
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.FconvertSwitches.resources
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.IPAR.resources
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.ISAMUtils.resources
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.ISUTLFastload.resources
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.isutlPatch.resources
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.isutlReload.resources
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.isutlVerify.resources
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.Properties.Resources.resources
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\GenerateResource.read.46.tlog
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\GenerateResource.write.46.tlog
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.exe
+C:\Users\lanes\Desktop\ISAMUtils\ISAMUtils\obj\Debug\ISAMUtils.pdb
