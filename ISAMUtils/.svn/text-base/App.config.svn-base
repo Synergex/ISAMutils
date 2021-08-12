@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="ISAMUtils.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  <userSettings>
+    <ISAMUtils.Properties.Settings>
+      <setting name="IsutlTabFastLoadTempFileText" serializeAs="String">
+        <value>0</value>
+      </setting>
+      <setting name="IsutlTabFastLoadIndexBlockCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabFastLoadConvertCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabFastLoadBrowseText" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabFastLoadBrowseIsamText" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabReloadBrowseText" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabReloadQFileCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabReloadDensityCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabReloadDensityText" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabReloadIndexTbyteCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabReloadSCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabReloadCCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabReloadMessageCombo" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabReloadPercentCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabReloadTText" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabVerifyBrowseText" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabVerifyICheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabVerifyLCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabVerifyLXCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabVerifyNCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabVerifyZCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabVerifyCCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabVerifyMessageCombo" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabVerifyPercentCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabPatchRevisionCombo" serializeAs="String">
+        <value>0</value>
+      </setting>
+      <setting name="IsutlTabPatchBrowseText" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabParXCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="IsutlTabParBrowseText" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="FconvertTabInputFileLockingIRadio" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="FconvertTabInputFileLockingEnableCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="FconvertTabInputFileLockingISAMText" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="FconvertTabInputFileLockingOptionsTCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="FconvertTabInputFileLockingOptionsRCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="FconvertTabInputfileLockingOptionsRText" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="FconvertTabOutputFileLockingIRadio" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="FconvertTabOutputFileLockingEnableCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="FconvertTabOutputFileLockingIsamText" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="FconvertTabOutputFileOptionsDCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="FconvertTabOutputFileOptionsFCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="FconvertTabOutputFileOptionsRCheck" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="FconvertTabOutputFileOptionsRText" serializeAs="String">
+        <value>False</value>
+      </setting>
+    </ISAMUtils.Properties.Settings>
+  </userSettings>
+</configuration>

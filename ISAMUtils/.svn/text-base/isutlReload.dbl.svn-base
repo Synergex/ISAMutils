@@ -1,0 +1,653 @@
+;; ***************************************************************************
+;;
+;;  Title:      isutlReload.dbl
+;;
+;;  Type:       UserControl
+;;
+;;  Description:UserControl for ISUTL-r controls
+;;
+;;  Author:     Dean Knipping, Synergy/DE Developer Support
+;;
+;;  Copyright:  ©Synergex International Inc.  All rights reserved.
+;;
+;;  WARNING:    If you were given this code by a Synergex employee then you may
+;;              use and modify it freely to generate code for your applications.
+;;              However, you may not under any circumstances distribute this
+;;              code, or any modified version of this code, to any third party
+;;              without first obtaining written permission to do so from
+;;              Synergex.  In using this code you accept that it is provided
+;;              as is, and without support or warranty.  Neither Synergex or the
+;;              author accept any responsibility for any losses or damages of
+;;              any nature which may arise from the use of this code.  This
+;;              header information must remain, unaltered in the code at all
+;;              times.  Possession of this code, or any modified version of this
+;;              code, indicates your acceptance of these terms.
+;;
+;; ***************************************************************************
+import System
+import System.Collections.Generic
+import System.ComponentModel
+import System.Data
+import System.Drawing
+import System.Windows.Forms
+import System.Text
+
+namespace ISAMUtils
+
+	public partial class isutlReload extends System.Windows.Forms.UserControl implements Ioptionspage
+		
+		public method isutlReload
+			endparams
+		proc
+			try
+			begin
+				this.InitializeComponent()
+				;;sets default value for message level
+				comboxISUTLReloadMessage.SelectedIndex = 0
+			end
+			
+			catch(synerr)
+			begin
+				generalRoutines.catch_code(synerr.ToString(),synerr.source.ToString())
+			end
+			endtry
+		endmethod
+
+;;;***********************************************************************************
+;;; Button Clicks
+;;; calls generalRoutines to handle folder and file browse button clicks
+;;;***********************************************************************************
+		private method btnISUTLReloadBrowseISAM_Click, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			generalRoutines.fileBrowseBtn(tboxISUTLReloadBrowse,1)
+		endmethod
+		
+
+		private method btnISUTLReloadT_Click, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			generalRoutines.dirBrowseBtn(tboxISUTLReloadT)
+		endmethod
+
+;;;***********************************************************************************
+;;; CheckBox CheckedChanged - Clear Panel
+;;; when the checkBox is either checked or unchecked, these routines will fire and
+;;; clear out the data in the fields associated with that checkBox
+;;;***********************************************************************************
+		private method cboxISUTLReloadO_CheckedChanged, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			generalRoutines.clearPanel(panISUTLReloadO,cboxISUTLReloadO)
+			tboxISUTLReloadO.Focus()
+		endmethod
+		
+
+		private method cboxISUTLReloadP_CheckedChanged, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			generalRoutines.clearPanel(panISUTLReloadP,cboxISUTLReloadP)
+			tboxISUTLReloadP.Focus()
+		endmethod
+		
+
+		private method cboxISUTLReloadQfile_CheckedChanged, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			generalRoutines.clearPanel(panISUTLReloadQfile,cboxISUTLReloadQfile)
+		endmethod
+		
+
+		private method cboxISUTLReloadT_CheckedChanged, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			generalRoutines.clearPanel(panISUTLReloadT,cboxISUTLReloadT)
+			tboxISUTLReloadT.Focus()
+		endmethod
+
+;;;***********************************************************************************
+;;; reloadtbyteCheckBox CheckedChanged 
+;;; sets tag values for -qfile options to build up the command line 
+;;;***********************************************************************************
+		private method cboxISUTLReloadTbyte_CheckedChanged, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+
+			record
+				itag,	@String
+				ttag,	@String
+				ptag,	@String
+			endrecord
+		proc
+			if(cboxISUTLReloadTbyte.Checked)
+			begin
+				if(cboxISUTLReloadIndex.Checked && cboxISUTLReloadDensity.Checked)
+				begin
+					ttag="tbyte"
+					itag=",page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(cboxISUTLReloadIndex.Checked && !cboxISUTLReloadDensity.Checked)
+				begin
+					ttag="tbyte"
+					itag=",page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(!cboxISUTLReloadIndex.Checked && cboxISUTLReloadDensity.Checked)
+				begin
+					ttag="tbyte"
+					itag=",page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(!cboxISUTLReloadIndex.Checked && !cboxISUTLReloadDensity.Checked)
+				begin
+					ttag="tbyte"
+					itag=",page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+			end
+			if(!cboxISUTLReloadTbyte.Checked)
+			begin
+				if(cboxISUTLReloadIndex.Checked && cboxISUTLReloadDensity.Checked)
+				begin
+					ttag="tbyte"
+					itag="page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(cboxISUTLReloadIndex.Checked && !cboxISUTLReloadDensity.Checked)
+				begin
+					ttag="tbyte"
+					itag="page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(!cboxISUTLReloadIndex.Checked && cboxISUTLReloadDensity.Checked)
+				begin
+					ttag="tbyte"
+					itag=",page="
+					ptag="density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(!cboxISUTLReloadIndex.Checked && !cboxISUTLReloadDensity.Checked)
+				begin
+					ttag="tbyte"
+					itag=",page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+			end		
+		endmethod
+
+;;;***********************************************************************************
+;;; reloadindexCheckBox CheckedChanged 
+;;; sets tag values for -qfile options to build up the command line 
+;;;***********************************************************************************
+		private method cboxISUTLReloadIndex_CheckedChanged, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+			
+			record
+				ptag,	@String
+				ttag,	@String
+				itag,	@string
+			endrecord
+		proc
+			generalRoutines.clearPanel(panISUTLReloadIndex,cboxISUTLReloadIndex)
+			comboxISUTLReloadIndex.focus()
+			
+			if(cboxISUTLReloadIndex.Checked)
+			begin
+				if(cboxISUTLReloadTbyte.Checked && cboxISUTLReloadDensity.Checked)
+				begin
+					ttag="tbyte"
+					itag=",page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(cboxISUTLReloadTbyte.Checked && !cboxISUTLReloadDensity.Checked)
+				begin
+					ttag="tbyte"
+					itag=",page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(!cboxISUTLReloadTbyte.Checked && cboxISUTLReloadDensity.Checked)
+				begin
+					ttag="tbyte"
+					itag="page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(!cboxISUTLReloadTbyte.Checked && !cboxISUTLReloadDensity.Checked)
+				begin
+					ttag="tbyte"
+					itag="page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+			end
+			if(!cboxISUTLReloadIndex.Checked)
+			begin
+				if(cboxISUTLReloadTbyte.Checked && cboxISUTLReloadDensity.Checked)
+				begin
+					ttag="tbyte"
+					itag="page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(cboxISUTLReloadTbyte.Checked && !cboxISUTLReloadDensity.Checked)
+				begin
+					ttag="tbyte"
+					itag="page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(!cboxISUTLReloadTbyte.Checked && cboxISUTLReloadDensity.Checked)
+				begin
+					ttag="tbyte"
+					itag=",page="
+					ptag="density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+			end	
+		endmethod		
+		
+;;;***********************************************************************************
+;;; reloaddensityCheckBox CheckedChanged 
+;;; sets tag values for -qfile options to build up the command line 
+;;;***********************************************************************************
+		private method cboxISUTLReloadDensity_CheckedChanged, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+
+			record
+				ttag,	@String
+				itag,	@String
+				ptag,	@String
+			endrecord
+		proc
+			generalRoutines.clearPanel(panISUTLReloadDensity,cboxISUTLReloadDensity)
+			if(cboxISUTLReloadDensity.Checked)
+			begin
+				if(cboxISUTLReloadTbyte.Checked && cboxISUTLReloadIndex.Checked)
+				begin
+					ttag="tbyte"
+					itag=",page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(cboxISUTLReloadTbyte.Checked && !cboxISUTLReloadIndex.Checked)
+				begin
+					ttag="tbyte"
+					itag=",page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(!cboxISUTLReloadTbyte.Checked && cboxISUTLReloadIndex.Checked)
+				begin
+					ttag="tbyte"
+					itag="page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(!cboxISUTLReloadTbyte.Checked && !cboxISUTLReloadIndex.Checked)
+				begin
+					ttag="tbyte"
+					itag="page="
+					ptag="density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+			end
+			if(!cboxISUTLReloadDensity.Checked)
+			begin
+				if(cboxISUTLReloadTbyte.Checked && cboxISUTLReloadIndex.Checked)
+				begin
+					ttag="tbyte"
+					itag=",page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(cboxISUTLReloadTbyte.Checked && !cboxISUTLReloadIndex.Checked)
+				begin
+					ttag="tbyte"
+					itag=",page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+				if(!cboxISUTLReloadTbyte.Checked && cboxISUTLReloadIndex.Checked)
+				begin
+					ttag="tbyte"
+					itag="page="
+					ptag=",density="
+					
+					cboxISUTLReloadTbyte.Tag=ttag
+					cboxISUTLReloadIndex.Tag=itag
+					cboxISUTLReloadDensity.tag=ptag
+				end
+			end	
+				tboxISUTLReloadDensity.Focus()
+		endmethod
+
+;;;***********************************************************************************
+;;; CheckBox ISUTLReloadA CheckedChanged
+;;;	checks to see if there is any text in the reload browse text box and if not, display
+;;; an error message. If it does have text, parse the file name and create a backup
+;;;***********************************************************************************
+		private method cboxIsutlReloadA_CheckedChanged, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+			
+			record
+				curLoc					,d3
+				strLength				,d3
+				strTarget				,String		,"\"
+				filePath				,String
+			endrecord
+		proc
+			try
+				if (cboxIsutlReloadA.Checked)
+				begin
+					if (tboxISUTLReloadBrowse.Text=="") then
+					begin
+						messagebox.Show("You must first select an ISAM file","ISUTL - File Selection Error")
+						cboxIsutlReloadA.Checked=false
+					end
+					else
+					begin
+						data rslt, DialogResult
+						strLength = ^size(tboxISUTLReloadBrowse.Text)
+						do
+							;;checks from the end of the string back to the value of strTarget
+							xcall rvstr(1,tboxISUTLReloadBrowse.Text,strTarget,curLoc)
+						until (curLoc)
+						
+						filePath = tboxISUTLReloadBrowse.Text
+						;;creates a messageBox with OK/Cancel button
+						rslt = messagebox.Show("A backup of " + filePath(curLoc+1,strLength) + 
+&						" has been automatically created", "Warning", MessageBoxButtons.OKCancel)
+						;;checks the status of rslt
+						if (rslt == DialogResult.ok) then
+						begin
+							;;if OK, copy the listed file
+							xcall copy (filePath,filePath(1,^size(filePath)-3) + "bak")
+						end
+						else
+						begin
+							cboxIsutlReloadA.Checked = false
+						end
+					end
+				end
+					
+			catch(synerr)
+			begin
+				cboxIsutlReloadA.checked=false
+				generalRoutines.catch_code(synerr.ToString(),synerr.source.ToString())
+			end
+			endtry
+		endmethod
+
+;;;***********************************************************************************
+;;; ComboBox selection changes
+;;; sets the tag value for the combo boxes based on the SelectedItemIndex
+;;;***********************************************************************************
+		private method comboxISUTLReloadMessage_SelectedIndexChanged, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+
+			record
+				index	,a1
+				elem	,@string
+			endrecord
+		proc
+			try
+			begin
+				index = comboxISUTLReloadMessage.SelectedIndex
+				using index select
+				('1'),
+				begin
+					elem = " -m0 "
+					comboxISUTLReloadMessage.Tag = elem
+				end
+				('2'),
+				begin
+					elem = " -m1 "
+					comboxISUTLReloadMessage.Tag = elem
+				end
+				('3'),
+				begin
+					elem = " -m2 "
+					comboxISUTLReloadMessage.Tag = elem
+				end
+				(),
+				begin
+					clear elem
+					comboxISUTLReloadMessage.Tag = elem
+				end
+				endusing
+			end
+			
+			catch(synerr)
+			begin
+				generalRoutines.catch_code(synerr.ToString(),synerr.source.ToString())
+			end
+			endtry
+		endmethod
+		
+
+		private method comboxISUTLReloadIndex_SelectedIndexChanged, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+
+			record
+				index	,a1
+				elem	,@string
+			endrecord
+		proc
+			try
+			begin
+				index = comboxISUTLReloadIndex.SelectedIndex
+				using index select
+				('1'),
+				begin
+					elem = "512"
+					comboxISUTLReloadIndex.Tag = elem
+				end
+				('2'),
+				begin
+					elem = "1024"
+					comboxISUTLReloadIndex.Tag = elem
+				end
+				('3'),
+				begin
+					elem = "2048"
+					comboxISUTLReloadIndex.Tag = elem
+				end
+				('4'),
+				begin
+					elem ="4096"
+					comboxISUTLReloadIndex.Tag = elem
+				end
+				('5'),
+				begin
+					elem ="8192"
+					comboxISUTLReloadIndex.Tag = elem
+				end
+				(),
+				begin
+					clear elem
+					comboxISUTLReloadIndex.Tag = elem
+				end
+				endusing
+			end
+			
+			catch(synerr)
+			begin
+				generalRoutines.catch_code(synerr.ToString(),synerr.source.ToString())
+			end
+			endtry
+		endmethod
+
+;;;***********************************************************************************
+;;; Leave methods for required fields
+;;; validates if a required field has data in it or not
+;;;***********************************************************************************
+		private method tboxISUTLReloadO_Leave, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			generalRoutines.validatefield("the 'Order database files by specified key'", cboxISUTLReloadO,tboxISUTLReloadO)
+		endmethod
+
+
+		private method tboxISUTLReloadP_Leave, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			generalRoutines.validatefield("the 'Pack index blocks'",cboxISUTLReloadP,tboxISUTLReloadP)
+			mreturn
+		endmethod
+		
+
+		private method comboxISUTLReloadIndex_Leave, void 
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			generalRoutines.validatefield("the 'Change file's index page block size'",cboxISUTLReloadIndex,comboxISUTLReloadIndex)
+			mreturn
+		endmethod
+
+
+		private method cboxISUTLReloadDensity_Leave, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			generalRoutines.validatefield("the 'Change file density'", cboxISUTLReloadDensity,tboxISUTLReloadDensity)
+		endmethod
+
+;;;***********************************************************************************
+;;; Numeric Only
+;;; checks each keystroke to verify that what is being entered is numeric only
+;;;***********************************************************************************
+		private method tboxISUTLReload_KeyPress, void
+			byval sender, @System.Object
+			byval e, @System.Windows.Forms.KeyPressEventArgs
+			endparams
+		proc
+			try
+			begin
+				data rtn		,boolean
+				rtn = generalRoutines.numericOnly(e.KeyChar.ToString())
+				if !rtn
+				begin
+					e.KeyChar = ""
+				end
+			end
+
+			catch(synerr)
+			begin
+				generalRoutines.catch_code(synerr.ToString(),synerr.source.ToString())
+			end
+			endtry
+		endmethod
+
+;;;***********************************************************************************
+;;; properties for Ioptionspage interface -- SCL
+;;;***********************************************************************************
+		public property Options, @List<string>
+			method get
+			proc
+				mreturn generalRoutines.bldCmdLine(this)
+			endmethod
+		endproperty
+	endclass
+endnamespace

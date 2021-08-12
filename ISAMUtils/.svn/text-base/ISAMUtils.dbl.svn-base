@@ -1,0 +1,345 @@
+;; ***************************************************************************
+;;
+;;  Title:      ISAMUtils.dbl
+;;
+;;  Type:       Container
+;;
+;;  Description:Main form for ISUTL, IPAR and F-Convert
+;;
+;;  Author:     Synergy/DE Developer Support
+;;
+;;  Copyright:  ©Synergex International Inc.  All rights reserved.
+;;
+;;  WARNING:    If you were given this code by a Synergex employee then you may
+;;              use and modify it freely to generate code for your applications.
+;;              However, you may not under any circumstances distribute this
+;;              code, or any modified version of this code, to any third party
+;;              without first obtaining written permission to do so from
+;;              Synergex.  In using this code you accept that it is provided
+;;              as is, and without support or warranty.  Neither Synergex or the
+;;              author accept any responsibility for any losses or damages of
+;;              any nature which may arise from the use of this code.  This
+;;              header information must remain, unaltered in the code at all
+;;              times.  Possession of this code, or any modified version of this
+;;              code, indicates your acceptance of these terms.
+;;
+;; ***************************************************************************
+import System
+import System.Text
+import System.Collections.Generic
+import System.ComponentModel
+import System.Data
+import System.Drawing
+import System.Windows.Forms
+import System.linq
+
+namespace ISAMUtils
+
+	public partial class ISAMUtilsClass extends System.Windows.Forms.Form
+		
+		public method ISAMUtilsClass
+			endparams
+		proc
+			try
+			begin
+				this.InitializeComponent()
+				generalRoutines.ISAMCommandString = new StringBuilder("",1024)
+			end
+
+			catch(synerr)
+			begin
+				generalRoutines.catch_code(synerr.ToString(),synerr.source.ToString())
+			end
+			endtry
+		endmethod
+
+;;;***********************************************************************************
+;;; Button Click - Clear All - jtf
+;;; gets the current tab and then clears all fields
+;;;***********************************************************************************		
+		private method btnClearSettings_Click, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			try
+			begin
+				data thetab		,@TabPage
+				thetab = generalroutines.FindSelectedTabPage(this.Controls)
+				generalRoutines.clearTab(thetab)
+				tboxOutput.Clear()
+				cboxSendToLog.Checked = false
+			end
+			
+			catch(synerr)
+			begin
+				generalRoutines.catch_code(synerr.ToString(),synerr.source.ToString())
+			end
+			endtry
+		endmethod
+
+;;;***********************************************************************************
+;;; Button Click - Exit - dlk
+;;; exits the application
+;;;***********************************************************************************
+		private method btnExit_Click, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			generalRoutines.exitBtn()
+		endmethod
+
+;;;***********************************************************************************
+;;; Button Click - Run - SCL
+;;; gets the current tab info and builds up a string using the tag values of each item
+;;;	in that tab then runs the string.
+;;;***********************************************************************************		
+		private method btnRun_Click, void
+			byval sender, @System.Object
+			byval e, @EventArgs
+			endparams
+
+			record
+				sb				,@StringBuilder
+				command			,string
+				output			,string
+				dest			,a255
+				dest2			,string
+				free_chan		,i4
+				theTab		    ,@TabPage
+				trans			,a60
+				len				,d3
+				redirect_file	,a255
+				outputfile	    ,string
+				file			,string
+			endrecord
+		proc
+			tboxOutput.Text = ""
+			
+.define CRLF  char(13)+char(10)
+			try
+			begin
+				;;create a new stringbuilder object
+				sb = new StringBuilder()
+				
+				;;find what tab page the user is on
+				theTab = generalRoutines.FindSelectedTabPage(this.Controls)
+				
+				using theTab.Name.ToString() select
+				;;if the user is on the reload tab
+				("tabReload"),
+				begin
+					;;send the options selected on this user control to a list and make it
+					;;equal to the variable "command"
+					command = generalRoutines.MakeArgs("isutl"" -r ", this.isutlReload1.options)
+					;;add the variable "command" to the built string "sb"
+					sb.Append(command)
+				end
+				
+				;;if the user is on the verify tab
+				("tabVerify"),
+				begin
+					command = generalRoutines.MakeArgs("isutl"" -v ", this.isutlVerify1.options)
+					sb.Append(command)
+				end
+				
+				;;if the user is on the fastload tab
+				("tabFastLoad"),
+				begin
+					command = generalRoutines.MakeArgs("isutl"" -f ", this.isutlFastload2.Options)
+					sb.Append(command)
+				end
+				
+				;;if the user is on the patch tab
+				("tabPatch"),
+				begin
+					command = generalRoutines.MakeArgs("isutl"" -p ", this.isutlPatch1.options)
+					sb.Append(command)
+				end
+				
+				;;if the user is on the ipar tab
+				("tabIpar"),
+				begin
+					command = generalRoutines.MakeArgs("ipar.exe"" ", this.ipar1.Options)
+					sb.Append(command)
+				end
+				
+				;;if the user is on any of the 3 fconvert tabs
+				("tabFconvertInput","tabFconvertOutput","tabFconvertSwitches"),
+				begin
+					sb.Append("fconvert"" ")
+					command = generalRoutines.MakeArgs("", this.fconvertSwitches1.options)
+					sb.Append(command)
+					command = generalRoutines.MakeArgs("", this.fconvertInput1.Options)
+					sb.Append(command)
+					command = generalRoutines.MakeArgs("", this.fconvertOutput1.options)
+					sb.Append(command)		
+				end
+				endusing
+				
+				;;bring up a message box showing the command line chosen with an OK CANCEL
+				;;option
+				if (MessageBox.Show(sb.ToString(), "Command Line", MessageBoxButtons.OKCancel, MessageBoxIcon.Question ) == DialogResult.OK); then
+				begin
+					;;if the user selects ok, create your string and spawn the isutl command					
+					file        = "isutl_output.txt"
+					outputfile = "%TEMP%\" + file
+					
+					output = sb.ToString()
+			  
+					;xcall shell(,"""""%DBLDIR%\bin\ipar.exe"" ""c:\temp\cdt.ism"" > ""c:\temp\isutltest.txt""  2>&1""");;works!!
+					;xcall shell(,"""""%DBLDIR%\bin\"+output+"" " > """+outputfile+"""  2>&1""")
+
+					xcall shell(,"""""%DBLDIR%\bin\"+output+"" " > " ""+outputfile+"""  2>&1", D_NOWINDOW)
+										
+					;;open the file that the command line was redirected to and 
+					;;read it.
+					xcall getlog("temp", redirect_file, len)
+					free_chan = %syn_freechn
+					open(free_chan, I, %atrim(redirect_file)+"\isutl_output.txt" )    ;;new
+					
+					repeat
+					begin
+						;;read the open pipe and store the contents into dest2
+						reads(free_chan, dest, eof)
+						dest2 = dest2 + CRLF + %atrim(dest)
+					end
+		eof,
+					close free_chan
+					tboxOutput.text=dest2
+					
+					;;create a log file and send it to c:\TEMP\isamutl.log
+					if (cboxSendToLog.Checked)
+						generalRoutines.createLogFile(dest2)			
+				end			
+			end
+			
+			catch(synerr)
+			begin
+				generalRoutines.catch_code(synerr.ToString(),synerr.source.ToString())
+			end
+			endtry
+		endmethod
+
+;;;***********************************************************************************
+;;; checkBox CheckChanged - Send to Log - dlk
+;;; calls generalRoutines to handle folder and file browse button clicks
+;;;***********************************************************************************
+		private method cboxSendToLog_CheckedChanged, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+
+			record
+				curDir				,String
+			endrecord
+		proc
+			try
+			if (cboxSendToLog.Checked)
+				begin
+					curDir = %syn_getdir
+					MessageBox.Show("Log file will be created in " + curDir)
+				end
+
+			catch(synerr)
+			begin
+				generalRoutines.catch_code(synerr.ToString(),synerr.source.ToString())
+			end
+			endtry
+		endmethod
+
+;;;***********************************************************************************
+;;; Main Form Load Method - dlk
+;;;***********************************************************************************
+		private method ISAMUtilsClass_Load, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+		endmethod
+
+;;;***********************************************************************************
+;;; Menu click events - bai/dlk
+;;;***********************************************************************************
+		private method aboutToolStripMenuItem_Click, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			generalRoutines.AboutBox()
+		endmethod
+
+
+		private method exitToolStripMenuItem_Click, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			try
+			begin
+				this.Close()
+			end
+
+			catch (synerr)
+			begin
+				generalRoutines.catch_code(synerr.ToString(),synerr.source.ToString())
+			end
+			endtry
+		endmethod
+		
+
+		private method iSUTLToolStripMenuItem_Click, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			try
+			begin
+				tabCtrlMain.SelectedIndex=0
+			end
+
+			catch (synerr)
+			begin
+				generalRoutines.catch_code(synerr.ToString(),synerr.source.ToString())
+			end
+			endtry
+		endmethod
+		
+
+		private method iPARToolStripMenuItem_Click, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			try
+			begin
+				tabCtrlMain.SelectedIndex=1
+			end
+
+			catch (synerr)
+			begin
+				generalRoutines.catch_code(synerr.ToString(),synerr.source.ToString())
+			end
+			endtry
+		endmethod
+		
+
+		private method fCONVERTToolStripMenuItem_Click, void
+			byval sender, @System.Object
+			byval e, @System.EventArgs
+			endparams
+		proc
+			try
+			begin
+				tabCtrlMain.SelectedIndex=2
+			end
+
+			catch (synerr)
+			begin
+				generalRoutines.catch_code(synerr.ToString(),synerr.source.ToString())
+			end
+			endtry
+		endmethod
+	endclass
+endnamespace
