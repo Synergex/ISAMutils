@@ -70,7 +70,22 @@
     <DocumentationFile />
     <SerializeAssembly>Auto</SerializeAssembly>
     <DllBaseAddress />
-    <DebugOptimize> </DebugOptimize>
+    <DebugOptimize>
+    </DebugOptimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <Prefer32Bit>False</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Prefer32Bit>False</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UnevaluatedOutputPath>bin\Debug\</UnevaluatedOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Prefer32Bit>False</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Prefer32Bit>False</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

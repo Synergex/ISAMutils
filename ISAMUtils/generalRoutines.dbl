@@ -72,11 +72,11 @@ namespace ISAMUtils
 				passedCtrl.Enabled = cbox.Checked
 				if (!cbox.Checked)
 				begin
-					data passedCtrl				,@System.Collections.IEnumerator
-					passedCtrl = passedCtrl.Controls.GetEnumerator()
-					while (passedCtrl.MoveNext())
+					data thepassedCtrl				,@System.Collections.IEnumerator
+					thepassedCtrl = passedCtrl.Controls.GetEnumerator()
+					while (thepassedCtrl.MoveNext())
 					begin
-						data ctrl				,@Control		,((Control)(passedCtrl.Current))
+						data ctrl				,@Control		,((Control)(thepassedCtrl.Current))
 						
 						if (ctrl .is. CheckBox)
 						begin
